@@ -1,6 +1,11 @@
 # /bin/bash
 
-apt-get install build-essential bc git wget dkms
+# this line show un text mode changlogs instead of pager mode
+sed -i "s/frontend=pager/frontend=text/g" /etc/apt/listchanges.conf
+
+apt-get update && apt-get -y upgrade
+
+apt-get -y install apt-transport-https build-essential bc git wget dkms
 
 cd /usr/src
 git clone --depth=1 https://github.com/raspberrypi/linux

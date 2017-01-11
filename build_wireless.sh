@@ -8,9 +8,9 @@ ln -s linux $(uname -r)
 ln -s /usr/src/linux /lib/modules/$(uname -r)/build
 
 cd linux
-wget -O Module.symvers https://raw.githubusercontent.com/raspberrypi/firmware/master/extra/Module.symvers
-KERNEL=kernel
-make bcmrpi_defconfig
+wget -O Module.symvers https://raw.githubusercontent.com/raspberrypi/firmware/master/extra/Module7.symvers
+KERNEL=kernel7
+make bcm2709_defconfig
 make prepare
 make modules_prepare
 

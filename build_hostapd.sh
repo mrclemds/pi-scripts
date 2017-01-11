@@ -5,7 +5,9 @@ sed -i "s/frontend=pager/frontend=text/g" /etc/apt/listchanges.conf
 
 apt-get update && apt-get -y upgrade
 
-apt-get -y install apt-transport-https git build-essential fakeroot devscripts debhelper libnl-dev libssl-dev
+apt-get -y install apt-transport-https
+
+apt-get -y install  git build-essential fakeroot devscripts debhelper libnl-dev libssl-dev
 
 cd /usr/srv
 

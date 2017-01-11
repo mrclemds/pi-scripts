@@ -28,6 +28,8 @@ DRV_NAME=rtl8812au
 DRV_VERSION=4.3.14
 mv rtl8812AU rtl8812au-4.3.14
 cd ${DRV_NAME}-${DRV_VERSION}
+sed -i "s/CONFIG_PLATFORM_I386_PC = y/CONFIG_PLATFORM_I386_RPI = n/g" ./Makefile
+sed -i "s/CONFIG_PLATFORM_ARM_RPI = n/CONFIG_PLATFORM_ARM_RPI = y/g" ./Makefile
 dkms add -m ${DRV_NAME} -v ${DRV_VERSION}
 dkms build -m ${DRV_NAME} -v ${DRV_VERSION}
 dkms install -m ${DRV_NAME} -v ${DRV_VERSION}
